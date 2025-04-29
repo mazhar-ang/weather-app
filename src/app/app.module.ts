@@ -4,26 +4,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './pages/home/home.component';
-import { LocationComponent } from './pages/location/location.component';
-import { MaterialModule } from './material/material.module';
-import { WeatherService } from './services/weather.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { StoreService } from './services/store.service';
+import { HeaderComponent } from './layout/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    LocationComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MaterialModule
+    FormsModule
+    
   ],
-  providers: [WeatherService],
+  providers: [StoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

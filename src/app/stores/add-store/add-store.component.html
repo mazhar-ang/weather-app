@@ -1,0 +1,144 @@
+<p-confirmDialog></p-confirmDialog>
+<div class="container-fluid mt-2 mb-3">
+
+  <div class="row mt-4">
+    <div class="col-md-6 d-flex align-items-center">
+      <button pButton class="back-btn" (click)="goBack()"><img src="assets/svg/icons/Text.svg" alt="" style="margin-left: -5px;"></button>
+      <h2 class="section-label poppins-semibold ml-2">Create Store</h2>
+    </div>
+    <div class="col-md-6">
+    </div>
+  </div>
+  <form [formGroup]="requestForm">
+    <div class="card p-4 mb-3">
+
+      <h5 class="mb-1 fw-bold">Request Details</h5>
+
+      <!-- Company Dropdown -->
+      <div class="row mb-3 mt-2">
+        <div class="col-md-12">
+          <label for="company" class="form-label fw-semibold">Company <span class="text-danger">*</span></label>
+          <p-dropdown [options]="companies" formControlName="company" placeholder="Select company" optionLabel="name"
+            inputId="company" class="w-100" [style]="{ 'width': '100%' }" appendTo="body">
+          </p-dropdown>
+
+          <div *ngIf="requestForm.get('company')?.touched && requestForm.get('company')?.invalid"
+            class="text-danger small">
+            Company is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-md-4">
+          <label for="name" class="form-label fw-semibold">Name <span class="text-danger">*</span></label>
+          <input pInputText id="name" formControlName="name" placeholder="Enter name" class="w-100" />
+          <div *ngIf="requestForm.get('name')?.touched && requestForm.get('name')?.invalid" class="text-danger small">
+            Name is required.
+          </div>
+          <small class="text-muted">This will be used in all communications and displays.</small>
+        </div>
+        <div class="col-md-4">
+          <label for="phone" class="form-label fw-semibold">Phone <span class="text-danger">*</span></label>
+          <input pInputText id="phone" formControlName="phone" placeholder="Enter phone number" class="w-100" />
+          <div *ngIf="requestForm.get('phone')?.touched && requestForm.get('phone')?.invalid" class="text-danger small">
+            Phone is required.
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="address" class="form-label fw-semibold">Address</label>
+          <input pInputText id="address" formControlName="address" placeholder="Enter address" class="w-100" />
+        </div>
+      </div>
+    </div>
+
+    <div class="card p-4 mb-3">
+
+      <h5 class="mb-1 fw-bold">Contact</h5>
+      <small class="text-muted">Provide the name and email address of the primary contact person for the store. This
+        individual will serve as the main point of communication for inquiries and updates, so please ensure the
+        information is accurate and up-to-date.</small>
+
+      <div class="row g-3 mt-2">
+        <div class="col-md-6">
+          <label for="name" class="form-label fw-semibold">Name <span class="text-danger">*</span></label>
+          <input pInputText id="contactName" formControlName="contactName" placeholder="Enter name" class="w-100" />
+          <div *ngIf="requestForm.get('contactName')?.touched && requestForm.get('contactName')?.invalid"
+            class="text-danger small">
+            Name is required.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label fw-semibold">Email <span class="text-danger">*</span></label>
+          <input pInputText id="email" formControlName="email" placeholder="Enter email address" class="w-100" />
+          <div *ngIf="requestForm.get('email')?.touched && requestForm.get('email')?.invalid" class="text-danger small">
+            Email is required.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card p-4 mb-3">
+
+      <h5 class="mb-1 fw-bold">Team Configuration</h5>
+      <small class="text-muted">Assign key roles to ensure smooth store management and workflow.</small>
+
+      <div class="row g-3 mt-2">
+        <div class="col-md-6">
+          <label for="srDirector" class="form-label fw-semibold">Sr. Director Operations <span
+              class="text-danger">*</span></label>
+          <p-dropdown [options]="companies" formControlName="srDirector" placeholder="Select from dropdown"
+            optionLabel="name" inputId="srDirector" class="w-100" [style]="{ 'width': '100%' }" appendTo="body">
+          </p-dropdown>
+
+          <div *ngIf="requestForm.get('srDirector')?.touched && requestForm.get('srDirector')?.invalid"
+            class="text-danger small">
+            Sr. Director Operations is required.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="director" class="form-label fw-semibold">Director Operations <span
+              class="text-danger">*</span></label>
+          <p-dropdown [options]="companies" formControlName="director" placeholder="Select from dropdown"
+            optionLabel="name" inputId="director" class="w-100" [style]="{ 'width': '100%' }" appendTo="body">
+          </p-dropdown>
+
+          <div *ngIf="requestForm.get('director')?.touched && requestForm.get('director')?.invalid"
+            class="text-danger small">
+            Director Operations is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-3 mt-2">
+        <div class="col-md-6">
+          <label for="supervisor" class="form-label fw-semibold">Supervisor <span class="text-danger">*</span></label>
+          <p-dropdown [options]="companies" formControlName="supervisor" placeholder="Select from dropdown"
+            optionLabel="name" inputId="supervisor" class="w-100" [style]="{ 'width': '100%' }" appendTo="body">
+          </p-dropdown>
+
+          <div *ngIf="requestForm.get('supervisor')?.touched && requestForm.get('supervisor')?.invalid"
+            class="text-danger small">
+            Supervisor is required.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="generalManager" class="form-label fw-semibold">General Manager <span
+              class="text-danger">*</span></label>
+          <p-dropdown [options]="companies" formControlName="generalManager" placeholder="Select from dropdown"
+            optionLabel="name" inputId="generalManager" class="w-100" [style]="{ 'width': '100%' }" appendTo="body">
+          </p-dropdown>
+
+          <div *ngIf="requestForm.get('generalManager')?.touched && requestForm.get('generalManager')?.invalid"
+            class="text-danger small">
+            General Manager is required.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end">
+      <button pButton class="close-btn mr-2">Close</button>
+      <button pButton class="create-btn">Create Store</button>
+    </div>
+  </form>
+</div>

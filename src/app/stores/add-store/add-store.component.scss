@@ -1,0 +1,52 @@
+
+@import '../../../assets/styles/custom-style.scss';
+.card {
+    border-radius: 1rem; // adjust as needed
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // optional for better elevation
+    border: 1px solid #F1F5F9;
+    background-color: #FFFFFF;
+}
+
+.section-label {
+    font-size: 24px;
+    color: #0F172A;
+}
+
+label {
+  display: inline-block;
+  width: 100%;
+  color: #344054;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.close-btn {
+  height: 40px;
+  background-color: #FFFFFF;
+  border: 1px solid #D5D7DA;
+  color: #344054;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.create-btn {
+  height: 40px;
+  background-color: #6964E1;
+  border: 1px solid #D5D7DA;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.back-btn {
+  border-radius: 100%;
+  background: #ffffff;
+  border: 1px solid #D0D5DD;
+  width: 30px;
+  height: 40px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+  

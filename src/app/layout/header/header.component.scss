@@ -1,0 +1,31 @@
+@import '../../../assets/styles/variables.scss';
+
+.main-bg {
+    background-color: #FFFFFF;
+}
+
+.profile-n {
+    color: $gray-dark;
+    font-size: 15px;
+    line-height: 100%;
+
+}
+
+.p-text {
+    line-height: 5px;
+}
+
+.role-text {
+    font-size: 12px;
+    color: $gray-dark;
+}
+
+li a {
+    font-size: 13px;
+    color: #6D7080;
+}
+
+li a img {
+    width: 20px;
+    height: 18px;
+}
